@@ -1,8 +1,12 @@
 import React from 'react';
+import Helmet from "react-helmet";
 
 function NotFound() {
   return (
-      <div>404</div>
+      <div>
+        <Helmet title="Not Found"/>
+        404
+      </div>
   );
 }
 

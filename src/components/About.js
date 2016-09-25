@@ -1,8 +1,12 @@
 import React from 'react';
+import Helmet from "react-helmet";
 
 function About() {
   return (
-      <div>About</div>
+      <div>
+        <Helmet title="About"/>
+        About
+      </div>
   );
 }
 

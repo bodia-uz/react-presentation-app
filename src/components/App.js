@@ -1,5 +1,6 @@
 import React from 'react';
 import { Match, Miss, Link } from 'react-router'
+import Helmet from "react-helmet";
 
 import Home from './Home';
 import About from './About';
@@ -9,6 +10,7 @@ import Greeting from './Greeting';
 function App() {
   return (
       <div>
+        <Helmet title=":)" titleTemplate="%s | React Presentation"/>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>

@@ -3,6 +3,8 @@ import path from 'path';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { ServerRouter, createServerRenderContext } from 'react-router'
+import Helmet from "react-helmet";
+
 import App from './components/App';
 
 const app = express();
@@ -17,16 +19,18 @@ app.use((request, response) => {
       </ServerRouter>
   );
 
-  response.send(renderFullPage(html));
+  const head = Helmet.rewind();
+
+  response.send(renderFullPage(head, html));
 });
 
-function renderFullPage(html) {
+function renderFullPage(head, html) {
   return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <title>Title</title>
+      ${head.title.toString()}
     </head>
     <body>
       <div id="container">${html}</div>

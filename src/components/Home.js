@@ -1,10 +1,14 @@
 import React from 'react';
+import Helmet from "react-helmet";
 
 import Greeting from './Greeting';
 
 function Home() {
   return (
-      <Greeting userName='BETLAB'/>
+      <div>
+        <Helmet title="Home"/>
+        <Greeting userName='BETLAB'/>
+      </div>
   );
 }
 
