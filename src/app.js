@@ -1,18 +1,7 @@
-function Greeting({userName}) {
-  return (
-      <span className='greeting'>
-          Hello <b>{userName}</b>
-      </span>
-  );
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function App() {
-  return (
-      <div>
-        <Greeting userName='BETLAB'/>
-      </div>
-  );
-}
+import App from './components/App';
 
 ReactDOM.render(
     <App />,
