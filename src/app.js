@@ -1,24 +1,20 @@
 function Greeting({userName}) {
   return (
-      React.createElement('span', {className: 'greeting'},
-          `Hello `,
-          React.createElement('b', null,
-            userName
-          ),
-          '!'
-      )
+      <span className='greeting'>
+          Hello <b>{userName}</b>
+      </span>
   );
 }
 
 function App() {
   return (
-      React.createElement('div', null,
-          React.createElement(Greeting, {userName: 'BETLAB'})
-      )
-  )
+      <div>
+        <Greeting userName='BETLAB'/>
+      </div>
+  );
 }
 
 ReactDOM.render(
-    React.createElement(App),
+    <App />,
     document.getElementById('container')
 );
